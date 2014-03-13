@@ -49,11 +49,29 @@ function insertaNuevoRegistro(){
 function botonVeggieAction(idVeggie){
 
 	if(misVeggies[idVeggie] == false){
-		document.getElementById("v"+idVeggie).style.backgroundImage = "url('../img/veggies/"+idVeggie+"s.png')";
+		document.getElementById("v"+idVeggie).style.backgroundImage = "url('img/veggies/"+idVeggie+"s.png')";
 		misVeggies[idVeggie] = !misVeggies[idVeggie];
 	}
 	else{
-		document.getElementById("v"+idVeggie).style.backgroundImage = "url('../img/veggies/"+idVeggie+".png')";
+		document.getElementById("v"+idVeggie).style.backgroundImage = "url('img/veggies/"+idVeggie+".png')";
 		misVeggies[idVeggie] = !misVeggies[idVeggie];
 	}
+}
+
+function terminaRegistro(){
+
+	var alFinal = false;
+
+	for (var i = misVeggies.length - 1; i >= 0; i--) {
+		//alert(misVeggies[i]);
+		alFinal = misVeggies[i] || alFinal;
+		//alert(alFinal);
+	};
+
+	//alert(alFinal);
+
+	if (alFinal)
+		alert("Registro Exitoso.");
+	else
+		alert("Debes seleccionar por lo menos un vegetal.");
 }
