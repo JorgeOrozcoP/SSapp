@@ -4,13 +4,15 @@ function insertaNuevoRegistro(){
 
 	var centro = miMapa.getCenter();
 
-	var bounds = new google.maps.LatLngBounds(
+	var coords = [
       centro,
-      new google.maps.LatLng(centro.lat()+0.0010, centro.lng()+0.0010)
-  	);
+      new google.maps.LatLng(centro.lat(), centro.lng()+0.0010),
+      new google.maps.LatLng(centro.lat()+0.0010, centro.lng()+0.0010),
+      new google.maps.LatLng(centro.lat()+0.0010, centro.lng())
+  	];
 
-	 var nuevoRect = new google.maps.Rectangle({
-	    bounds: bounds,
+	 var nuevoRect = new google.maps.Polygon({
+	    paths: coords,
 	    editable: true,
 	    draggable: true,
 	    fillColor: "Lime",
@@ -22,7 +24,5 @@ function insertaNuevoRegistro(){
 	misREctanguloas.push(nuevoRect);
 
 	nuevoRect.setMap(miMapa);
-
-
 
 }
