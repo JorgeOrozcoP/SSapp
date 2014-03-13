@@ -4,4 +4,6 @@ body { height: 100%; margin: 0; padding: 0 }
 
 #map-canvas { height: 100%; width: 1000px; float: left;}
 
-#barra_lateral { height: 100%; width: 300px; float: left; background-color: blue; }
+#barra_lateral { height: 100%; width: 300px; float: left; background-color: #E8E8E8; }
+
+#insertaNuevo { background: url("../img/libreta.png") repeat scroll 0 0 rgba(0, 0, 0, 0); height: 200px; width: 200px; margin: 50px 50px;}

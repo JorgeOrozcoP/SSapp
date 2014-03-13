@@ -8,21 +8,25 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAs6b_ilv2tqEDy5kbCe9JAS_fj1BZJ_Wo&sensor=false">
     </script>
     <script type="text/javascript">
+    var miMapa
       function initialize() {
         var mapOptions = {
           center: new google.maps.LatLng(18.983,-97.783),
-          zoom: 15,
+          zoom: 16,
           mapTypeId: google.maps.MapTypeId.SATELLITE
         };
-        var map = new google.maps.Map(document.getElementById("map-canvas"),
+        miMapa = new google.maps.Map(document.getElementById("map-canvas"),
             mapOptions);
       }
       google.maps.event.addDomListener(window, 'load', initialize);
+
     </script>
     <script type="text/javascript" src='estiloLogica/logic.js'></script>
   </head>
   <body>
-    <div id='barra_lateral'></div>
+    <div id='barra_lateral'>
+      <button id='insertaNuevo' onclick="insertaNuevoRegistro()"></button>
+    </div>
     <div id="map-canvas"/>
   </body>
 </html>
