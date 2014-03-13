@@ -1,4 +1,21 @@
 var misREctanguloas = new Array();
+var miMapa;
+
+var misVeggies = [false, false, false, false, false, false];
+
+function initialize() {
+var mapOptions = {
+  center: new google.maps.LatLng(18.983,-97.783),//Acatzingo
+  zoom: 16,
+  mapTypeId: google.maps.MapTypeId.SATELLITE
+};
+miMapa = new google.maps.Map(document.getElementById("map-canvas"),
+    mapOptions);
+}
+
+//iniciar mapa
+google.maps.event.addDomListener(window, 'load', initialize);
+
 
 function insertaNuevoRegistro(){
 
@@ -15,9 +32,9 @@ function insertaNuevoRegistro(){
 	    paths: coords,
 	    editable: true,
 	    draggable: true,
-	    fillColor: "Lime",
-	    fillOpacity: 0.5,
-	    strokeColor: "LimeGreen",
+	    fillColor: "ForestGreen",
+	    fillOpacity: 0.7,
+	    strokeColor: "Green",
 	    strokeOpacity: 1.0
 	  });
 
@@ -25,4 +42,18 @@ function insertaNuevoRegistro(){
 
 	nuevoRect.setMap(miMapa);
 
+	document.getElementById("contenedorVeggies").style.display = "block";
+
+}
+
+function botonVeggieAction(idVeggie){
+
+	if(misVeggies[idVeggie] == false){
+		document.getElementById("v"+idVeggie).style.backgroundImage = "url('../img/veggies/"+idVeggie+"s.png')";
+		misVeggies[idVeggie] = !misVeggies[idVeggie];
+	}
+	else{
+		document.getElementById("v"+idVeggie).style.backgroundImage = "url('../img/veggies/"+idVeggie+".png')";
+		misVeggies[idVeggie] = !misVeggies[idVeggie];
+	}
 }

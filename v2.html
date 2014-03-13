@@ -1,3 +1,4 @@
+<!--https://developers.google.com/maps/documentation/javascript/reference#Map es el api-->
 <!DOCTYPE html>
 <html>
   <head>
@@ -7,25 +8,19 @@
     <script type="text/javascript"
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAs6b_ilv2tqEDy5kbCe9JAS_fj1BZJ_Wo&sensor=false">
     </script>
-    <script type="text/javascript">
-    var miMapa
-      function initialize() {
-        var mapOptions = {
-          center: new google.maps.LatLng(18.983,-97.783),
-          zoom: 16,
-          mapTypeId: google.maps.MapTypeId.SATELLITE
-        };
-        miMapa = new google.maps.Map(document.getElementById("map-canvas"),
-            mapOptions);
-      }
-      google.maps.event.addDomListener(window, 'load', initialize);
-
-    </script>
     <script type="text/javascript" src='estiloLogica/logic.js'></script>
   </head>
   <body>
     <div id='barra_lateral'>
       <button id='insertaNuevo' onclick="insertaNuevoRegistro()"></button>
+      <div id='contenedorVeggies'>
+        <button id='v0' class='botonVeggie' onclick="botonVeggieAction(0)"></button>
+        <button id='v1' class='botonVeggie' onclick="botonVeggieAction(1)"></button>
+        <button id='v2' class='botonVeggie' onclick="botonVeggieAction(2)"></button>
+        <button id='v3' class='botonVeggie' onclick="botonVeggieAction(3)"></button>
+        <button id='v4' class='botonVeggie' onclick="botonVeggieAction(4)"></button>
+        <button id='v5' class='botonVeggie' onclick="botonVeggieAction(5)"></button>
+      </div>
     </div>
     <div id="map-canvas"/>
   </body>
