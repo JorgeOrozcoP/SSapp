@@ -1,11 +1,11 @@
-var misREctanguloas = new Array();
+	var misREctanguloas = new Array();
 var miMapa;
 
 var misVeggies = [false, false, false, false, false, false];
 
 function initialize() {
 var mapOptions = {
-  center: new google.maps.LatLng(18.983,-97.783),//Acatzingo
+  center: new google.maps.LatLng(19.8333,-98.03333),//Acatzingo
   zoom: 16,
   mapTypeId: google.maps.MapTypeId.SATELLITE
 };
@@ -15,6 +15,11 @@ miMapa = new google.maps.Map(document.getElementById("map-canvas"),
 
 //iniciar mapa
 google.maps.event.addDomListener(window, 'load', initialize);
+
+window.onload = function(){
+
+	document.getElementById("checkOut").disabled = false;	
+}
 
 
 function insertaNuevoRegistro(){
@@ -70,8 +75,24 @@ function terminaRegistro(){
 
 	//alert(alFinal);
 
-	if (alFinal)
-		alert("Registro Exitoso.");
-	else
-		alert("Debes seleccionar por lo menos un vegetal.");
+	if (alFinal){
+		//document.getElementById("tick").style.display = "block";
+		document.getElementById("checkOut").style.backgroundImage = "url('img/Paloma1Final.png')";
+		document.getElementById("checkOut").disabled = true;
+		setTimeout(function(){
+						document.getElementById("checkOut").style.backgroundImage = "url('img/tickBoton.jpg')";
+						document.getElementById("checkOut").disabled = false;
+					},3000);
+		//alert("Registro Exitoso.");
+	}
+	else{
+		//document.getElementById("cross").style.display = "block";
+		document.getElementById("checkOut").style.backgroundImage = "url('img/Cruz1Final.png')";
+		document.getElementById("checkOut").disabled = true;
+		setTimeout(function()
+						{document.getElementById("checkOut").style.backgroundImage = "url('img/tickBoton.jpg')";
+						document.getElementById("checkOut").disabled = false;
+					},3000);
+		//alert("Debes seleccionar por lo menos un vegetal.");
+	}
 }

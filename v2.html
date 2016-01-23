@@ -2,6 +2,16 @@
 <!DOCTYPE html>
 <html>
   <head>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-47596917-1', 'jorgeorozcop.com');
+  ga('send', 'pageview');
+
+</script>
   <title>Cosecha Digital</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" type="text/css" href="estiloLogica/style.css">
@@ -12,7 +22,8 @@
   </head>
   <body>
     <div id='barra_lateral'>
-      <button id='insertaNuevo' onclick="insertaNuevoRegistro()"></button>
+      <button  id='insertaNuevo' onclick="insertaNuevoRegistro()"></button>
+      <button style='margin-left:50px; margin-bottom: 30px; background-image:url(img/graph_cartoon.gif); width:200px; height: 166px;' onclick="window.open('graph.html')"></button>
       <div id='contenedorVeggies'>
         <button id='v0' class='botonVeggie' onclick="botonVeggieAction(0)"></button>
         <button id='v1' class='botonVeggie' onclick="botonVeggieAction(1)"></button>
@@ -20,9 +31,10 @@
         <button id='v3' class='botonVeggie' onclick="botonVeggieAction(3)"></button>
         <button id='v4' class='botonVeggie' onclick="botonVeggieAction(4)"></button>
         <button id='v5' class='botonVeggie' onclick="botonVeggieAction(5)"></button>
-        <button id='checkOut' onclick="terminaRegistro()">Terminar Registro</button>
+        <button id='checkOut' onclick="terminaRegistro()"></button>
       </div>
     </div>
+
     <div id="map-canvas"/>
   </body>
 </html>
